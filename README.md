@@ -52,5 +52,5 @@ The `main` function gets an instance of `System`, which allows you to do anythin
 
 ### Problem: Poor Language Interoperability
 
-### Solution: A Single Language
+### Solution: Multiple Targets
 
