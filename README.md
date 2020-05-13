@@ -36,6 +36,7 @@ Because there is no global state, all functions are pure unless they are passed 
 
 ### Solution: Replace Subtyping
 
+### Bonus: Type Driven Development
 
 
 
@@ -43,8 +44,11 @@ Because there is no global state, all functions are pure unless they are passed 
 
 ### Solution: Type Classes
 
+### Bonus: Automatic Instances
+
 
 ## Problem: Poor Language Interoperability
 
 ### Solution: Multiple Targets
 
+### Bonus: Code Sharing
