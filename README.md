@@ -17,7 +17,7 @@ function main(system: System): Unit {
   copyFile(system.files, "in.txt", "out.txt")
 }
 
-function copyFile(fs: FileSystem, in: String, out: String) {
+function copyFile(fs: FileSystem, in: String, out: String): Unit {
   let bytes = fs.readBytes(in)
   fs.writeBytes(out, bytes)
 }
