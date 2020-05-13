@@ -10,8 +10,6 @@ A simple and safe alternative to Java.
 
 ## Firefly is safe
 
-*Firefly puts you in control.*
-
 ### Problem: Ambient Authority
 
 In most programming languages, every piece of code can silently read from your file system, access the internet, and generally misbehave. It's not feasible to vet all the dependencies that a modern application might have. Is the `BCrypt` implementation you depend on secretly sending your passwords somewhere? Have you checked?
