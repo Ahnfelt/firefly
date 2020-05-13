@@ -27,7 +27,29 @@ function copyFile(fs: FileSystem, in: String, out: String) {
 }
 ```
 
-The `main` function gets an instance of `System`, which allows you to do anything, and you can then delegate responsibility to other functions by passing them either `system` or one of its fields, such as `system.files`, which only lets you access the file system. Other examples are `system.network` and `system.environment` etc.
+The `main` function gets an instance of `System`, which allows you to do anything, and you can then delegate responsibility to other functions by passing them either `system` or one of its fields, such as `system.files`, which only lets you access the file system. Other examples are `system.network` and `system.environment` etc. Firefly has no global state through which such capabilities can leak.
 
-Firefly has no global state, so it's not possible to accidentally make such capabilities globally available. 
+
+## Firefly is simple
+
+### Problem: Contravariance & Deep Hierarchies
+
+
+
+### Solution: Abolish Subtyping
+
+
+
+## Firefly is powerful
+
+### Problem: Overloading
+
+### Solution: Type Classes
+
+
+## Firefly is portable
+
+### Problem: Poor Language Interoperability
+
+### Solution: A Single Language
 
