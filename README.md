@@ -8,13 +8,13 @@ A simple and safe alternative to Java.
 **This is a draft -- claims made below are merely tentative goals.**
 
 
-## Firefly is safe
+# Firefly is safe
 
-### Problem: Ambient Authority
+## Problem: Ambient Authority
 
 In most programming languages, every piece of code can silently read from your file system, access the internet, and generally misbehave. It's not feasible to vet all the dependencies that a modern application might have. Is the `BCrypt` implementation you depend on secretly sending your passwords somewhere? Have you checked?
 
-### Solution: Object Capabilities
+## Solution: Object Capabilities
 
 ```
 function main(system: System): Unit {
@@ -30,27 +30,27 @@ function copyFile(fs: FileSystem, in: String, out: String) {
 The `main` function gets an instance of `System`, which allows you to do anything, and you can then delegate responsibility to other functions by passing them either `system` or one of its fields, such as `system.files`, which only lets you access the file system. Other examples are `system.network` and `system.environment` etc. Firefly has no global state through which such capabilities can leak.
 
 
-## Firefly is simple
+# Firefly is simple
 
-### Problem: Contravariance & Deep Hierarchies
-
-
-
-### Solution: Replace Subtyping
+## Problem: Contravariance & Deep Hierarchies
 
 
 
-
-## Firefly is powerful
-
-### Problem: Overloading
-
-### Solution: Type Classes
+## Solution: Replace Subtyping
 
 
-## Firefly is portable
 
-### Problem: Poor Language Interoperability
 
-### Solution: Multiple Targets
+# Firefly is powerful
+
+## Problem: Overloading
+
+## Solution: Type Classes
+
+
+# Firefly is portable
+
+## Problem: Poor Language Interoperability
+
+## Solution: Multiple Targets
 
