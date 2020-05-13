@@ -36,7 +36,8 @@ The `main` function gets an instance of `System`, which allows you to do anythin
 
 
 
-### Solution: Abolish Subtyping
+### Solution: Replace Subtyping
+
 
 
 
