@@ -27,7 +27,7 @@ In Firefly, the `main` function gets an instance of `System`, which allows you t
 
 ## Bonus: Reliable Functions
 
-Because there is no global state, all functions are pure unless they are passed or close over impure objects. That means they will reliably return the same value every time they're passed the same arguments. It's a powerful tool for building reliable and predictable software.
+Because there is no global state, all functions are pure unless they are passed or close over impure objects. That means they will reliably return the same value every time they're passed the same arguments.
 
 
 # Firefly is simple
