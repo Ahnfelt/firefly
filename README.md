@@ -1,7 +1,11 @@
 # Firefly
 *Kiss subtyping goodbye!*
 
-A simple and safe alternative to Java.
+---
+
+Firefly is a simple and safe alternative to Java.
+
+---
 
 *Firefly combines a small set of simple features -- all of which were invented several decades ago.*
 
