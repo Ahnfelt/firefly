@@ -21,22 +21,22 @@ Because there is no global state, all functions are pure unless they are passed 
 # Traits
 
 ```
-trait ReadJson[T] {
+trait T: ReadJson {
   read(json: Json): Result[T]
 }
 
-trait WriteJson[T] {
+trait T: WriteJson {
   write(value: T): Json
 }
 
-instance ReadJson[String] {
+instance String: ReadJson {
   read(json) {
     |JString(s)| Ok(s)
     |j| NotOk("Expected JSON string, got " ++ show(j))
   }
 }
 
-instance WriteJson[String] {
+instance String: WriteJson {
   write(value) {
     JString(value)
   }
