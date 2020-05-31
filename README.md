@@ -16,3 +16,34 @@ In Firefly, the `main` function gets an instance of `System`, which allows you t
 Firefly has no global state through which such capabilities can leak.
 
 Because there is no global state, all functions are pure unless they are passed or close over impure objects. That means they will reliably return the same value every time they're passed the same arguments.
+
+
+# Traits
+
+```
+trait ReadJson[T] {
+  read(json: Json): Result[T]
+}
+
+trait WriteJson[T] {
+  write(value: T): Json
+}
+
+instance ReadJson[String] {
+  read(json) {
+    |JString(s)| Result.ok(s)
+    |j| Result.notOk("Expected JSON string, got " ++ show(j))
+  }
+}
+
+instance WriteJson[String] {
+  write(value) {
+    JString(value)
+  }
+}
+
+function main(system) {
+  let configuration = Json.readFile[Configuration](system.files, "configuration.json")
+  system.out.writeLine(configuration("greeting").string)
+}
+```
