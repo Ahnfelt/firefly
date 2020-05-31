@@ -31,8 +31,8 @@ trait WriteJson[T] {
 
 instance ReadJson[String] {
   read(json) {
-    |JString(s)| Result.ok(s)
-    |j| Result.notOk("Expected JSON string, got " ++ show(j))
+    |JString(s)| Ok(s)
+    |j| NotOk("Expected JSON string, got " ++ show(j))
   }
 }
 
