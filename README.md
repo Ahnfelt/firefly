@@ -54,7 +54,9 @@ function main(system) {
 ```
 list.map {x => x * x}
 
-list.foldLeft {x, y => x + y}
+list.foldLeft(0) {x, y => x + y}
+
+list.foldLeft(0) {_ + _}
 
 function unify(type1: Type, type2: Type): Unit {
   | TVariable(i1), TVariable(i2); i1 == i2 =>
@@ -66,6 +68,16 @@ function unify(type1: Type, type2: Type): Unit {
     bind(i, t1)
   | TConstructor(name1, generics1), TConstructor(name2, generics2) =>
     assert(name1 == name2 && generics1.size == generics2.size)
-    generics1.zip(generics2).each {| t1 -> t2 => unify(t1, t2) }
+    generics1.zip(generics2).each {| (t1, t2) => unify(t1, t2) }
 }
 ```
+
+  * Lambda functions may directly pattern match on their arguments.
+  * The pipe `|` is used to indicate a case. 
+  * The `;` indicates a pattern guard. 
+  * When there's a single case consisting of only variable names, the pipe can be left out. 
+  * Function bodies can pattern match on the arguments of the function as well. 
+  * Lambdas are always enclosed in `{}` and support multiple statements. 
+  * In expressions, `_` is an anonymous parameter, always belonging to the nearest enclosing `{}`. 
+  * In patterns, `_` ignores a value.  
+  * Lambdas can occur after a field or a call, in which case they become an extra argument to the method call.
