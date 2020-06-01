@@ -68,5 +68,4 @@ function unify(type1: Type, type2: Type): Unit {
     assert(name1 == name2 && generics1.size == generics2.size)
     generics1.zip(generics2).each {| t1 -> t2 => unify(t1, t2) }
 }
-
 ```
