@@ -31,8 +31,8 @@ trait T: WriteJson {
 
 instance String: ReadJson {
   read(json) {
-    |JString(s)| Ok(s)
-    |j| NotOk("Expected JSON string, got " ++ show(j))
+    | JString(s) => Ok(s)
+    | j => NotOk("Expected JSON string, got " ++ show(j))
   }
 }
 
@@ -46,4 +46,27 @@ function main(system) {
   let configuration = Json.readFile[Configuration](system.files, "configuration.json")
   system.out.writeLine(configuration("greeting").string)
 }
+```
+
+
+## Lambdas and pattern matching
+
+```
+list.map {x => x * x}
+
+list.foldLeft {x, y => x + y}
+
+function unify(type1: Type, type2: Type): Unit {
+  | TVariable(i1), TVariable(i2); i1 == i2 =>
+  | TVariable(i), _ =>
+    assert(!occursIn(i, t2))
+    bind(i, t2)
+  | _, TVariable(i) =>
+    assert(!occursIn(i, t1))
+    bind(i, t1)
+  | TConstructor(name1, generics1), TConstructor(name2, generics2) =>
+    assert(name1 == name2 && generics1.size == generics2.size)
+    generics1.zip(generics2).each {| t1 -> t2 => unify(t1, t2) }
+}
+
 ```
