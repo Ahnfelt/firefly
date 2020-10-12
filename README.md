@@ -1,3 +1,7 @@
+# A language in development
+
+Firefly compiles itself: https://github.com/Ahnfelt/firefly-boot
+
 # A taste of Firefly
 
 ```
